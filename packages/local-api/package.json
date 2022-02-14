@@ -1,17 +1,31 @@
 {
-  "name": "local-api",
+  "name": "@sandblox/local-api",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
-  "types": "dist/index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "http-proxy-middleware": "^2.0.3",
+    "@sandblox/local-client": "^1.0.0"
+  },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
     "typescript": "^4.5.5"
   }
 }
